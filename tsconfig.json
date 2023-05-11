@@ -6,6 +6,7 @@
     "forceConsistentCasingInFileNames": true,         
     "strict": true,
     "baseUrl": "./",
+    "noImplicitAny": false,
     "paths": {
       "@/*": ["./src/*"]
     }

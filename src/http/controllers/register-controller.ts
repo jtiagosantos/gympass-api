@@ -24,7 +24,7 @@ export class RegisterController {
         return reply.status(409).send({ error: error.message });
       }
 
-      return reply.status(500).send();
+      throw error;
     }
 
     reply.status(201).send();
