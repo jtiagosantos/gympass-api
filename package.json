@@ -8,7 +8,9 @@
     "start": "node build/server.js",
     "build": "tsup src --out-dir build",
     "lint:check": "npx eslint \"src/**/*.ts\"",
-    "lint:fix": "npx eslint \"src/**/*.ts\" --fix"
+    "lint:fix": "npx eslint \"src/**/*.ts\" --fix",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -26,7 +28,9 @@
     "prisma": "4.13.0",
     "tsup": "6.7.0",
     "tsx": "3.12.7",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "vite-tsconfig-paths": "4.2.0",
+    "vitest": "0.31.0"
   },
   "dependencies": {
     "@prisma/client": "4.13.0",
