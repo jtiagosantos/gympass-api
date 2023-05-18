@@ -20,4 +20,8 @@ export class PrismaUserRepository implements UserRepository {
 
     return user;
   }
+
+  async findById(id: string) {
+    return null;
+  }
 }
