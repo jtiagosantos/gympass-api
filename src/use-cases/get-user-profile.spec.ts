@@ -7,7 +7,7 @@ import { ResourceNotFoundError } from './errors/resource-not-found-error';
 let userRepository: InMemoryUserRepository;
 let getUserProfileUseCase: GetUserProfileUseCase;
 
-describe('GetUserProfile Use Case', () => {
+describe('Get User Profile Use Case', () => {
   beforeEach(() => {
     userRepository = new InMemoryUserRepository();
     getUserProfileUseCase = new GetUserProfileUseCase(userRepository);
