@@ -1,14 +1,14 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { FetchNearbyUseCase } from './fetch-nearby-gyms-use-case';
+import { FetchNearbyGymsUseCase } from './fetch-nearby-gyms-use-case';
 import { InMemoryGymRepository } from '@/repositories/in-memory-gym-repository';
 
 let gymRepository: InMemoryGymRepository;
-let fetchNearbyUseCase: FetchNearbyUseCase;
+let fetchNearbyGymsUseCase: FetchNearbyGymsUseCase;
 
 describe('Fetch Nearby Gyms Use Case', () => {
   beforeEach(async () => {
     gymRepository = new InMemoryGymRepository();
-    fetchNearbyUseCase = new FetchNearbyUseCase(gymRepository);
+    fetchNearbyGymsUseCase = new FetchNearbyGymsUseCase(gymRepository);
   });
 
   it('should be able to fetch nearby gyms', async () => {
@@ -28,7 +28,7 @@ describe('Fetch Nearby Gyms Use Case', () => {
       longitude: -58.5651723,
     });
 
-    const { gyms } = await fetchNearbyUseCase.execute({
+    const { gyms } = await fetchNearbyGymsUseCase.execute({
       userLatitude: -3.0211984,
       userLongitude: -59.94651,
     });
