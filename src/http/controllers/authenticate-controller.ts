@@ -15,7 +15,18 @@ export class AuthenticateController {
     try {
       const authenticateUseCase = makeAuthenticateUseCase();
 
-      await authenticateUseCase.execute({ email, password });
+      const { user } = await authenticateUseCase.execute({ email, password });
+
+      const token = await reply.jwtSign(
+        {},
+        {
+          sign: {
+            sub: user.id,
+          },
+        },
+      );
+
+      reply.status(200).send({ token });
     } catch (error) {
       if (error instanceof InvalidCredentialsError) {
         return reply.status(400).send({ error: error.message });
@@ -23,7 +34,5 @@ export class AuthenticateController {
 
       throw error;
     }
-
-    reply.status(200).send();
   }
 }
