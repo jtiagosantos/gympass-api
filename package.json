@@ -15,6 +15,7 @@
     "test:watch": "vitest --dir src/use-cases",
     "pretest:e2e": "run-s test:create-prisma-environment test:install-prisma-environment",
     "test:e2e": "vitest run --dir src/http",
+    "test:e2e:watch": "vitest --dir src/http",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui --api 9527"
   },
@@ -24,6 +25,7 @@
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
     "@types/node": "18.16.3",
+    "@types/supertest": "2.0.12",
     "@typescript-eslint/eslint-plugin": "5.59.2",
     "@typescript-eslint/parser": "5.59.2",
     "@vitest/coverage-c8": "0.31.0",
@@ -48,6 +50,7 @@
     "dotenv": "16.0.3",
     "fastify": "4.17.0",
     "npm-run-all": "4.1.5",
+    "supertest": "6.3.3",
     "zod": "3.21.4"
   },
   "config": {
