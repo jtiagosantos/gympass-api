@@ -5,7 +5,8 @@ import { logs } from './logs';
 import { errorHandler } from './global/error-handler';
 import { env } from './env';
 
-import { appRoutes } from './http/routes';
+import { userRoutes } from './http/controllers/user/routes';
+import { gymRoutes } from './http/controllers/gym/routes';
 
 export const app = fastify();
 
@@ -17,4 +18,5 @@ app.addHook('preHandler', logs);
 
 app.setErrorHandler(errorHandler);
 
-app.register(appRoutes);
+app.register(userRoutes);
+app.register(gymRoutes);
