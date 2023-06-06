@@ -7,6 +7,7 @@ import { env } from './env';
 
 import { userRoutes } from './http/controllers/user/routes';
 import { gymRoutes } from './http/controllers/gym/routes';
+import { checkInRoutes } from './http/controllers/check-in/routes';
 
 export const app = fastify();
 
@@ -20,3 +21,4 @@ app.setErrorHandler(errorHandler);
 
 app.register(userRoutes);
 app.register(gymRoutes);
+app.register(checkInRoutes);
