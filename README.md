@@ -62,7 +62,7 @@
 
 <br>
 
-## 🚀 Executar projeto
+## 🚀 Run Project
 
 1️⃣ Clone o projeto e acesse sua pasta:
 
@@ -109,7 +109,7 @@ $ npm run dev
 
 <br>
 
-## ⚡ Executar testes
+## ⚡ Run Tests
 
 ✅ Testes unitários (execução única):
 
@@ -143,7 +143,7 @@ $ npm run test:coverage
 
 <br>
 
-## 🛠 Tecnologias
+## 🛠 Technologies
 
 The following tools were used in the construction of project:
 
