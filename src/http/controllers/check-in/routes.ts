@@ -4,6 +4,7 @@ import { CreateController } from './create-controller';
 import { ValidateController } from './validate-controller';
 import { HistoryController } from './history-controller';
 import { MetricsController } from './metrics-controller';
+import { verifyUserRole } from '@/http/middlewares/verify-user-role';
 
 export const checkInRoutes = async (app: FastifyInstance) => {
   app.addHook('onRequest', verifyJWT);
@@ -11,5 +12,9 @@ export const checkInRoutes = async (app: FastifyInstance) => {
   app.get('/check-ins/history', new HistoryController().handle);
   app.get('/check-ins/metrics', new MetricsController().handle);
   app.post('/gyms/:gymId/check-ins', new CreateController().handle);
-  app.patch('/check-ins/:checkInId/validate', new ValidateController().handle);
+  app.patch(
+    '/check-ins/:checkInId/validate',
+    { onRequest: [verifyUserRole('ADMIN')] },
+    new ValidateController().handle,
+  );
 };
