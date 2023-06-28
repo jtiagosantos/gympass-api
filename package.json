@@ -1,6 +1,5 @@
 {
   "name": "gympass-api",
-  "version": "1.0.0",
   "description": "GymPass API.",
   "main": "index.js",
   "scripts": {
@@ -19,9 +18,6 @@
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui --api 9527"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@types/bcryptjs": "2.4.2",
     "@types/node": "18.16.3",
